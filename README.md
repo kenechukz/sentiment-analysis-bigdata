@@ -4,6 +4,11 @@
 
 This script cleans a Twitter training CSV and writes a filtered version to the `datasets/` folder.
 
+### Prerequisites
+
+- CSV must have these columns in this exact order:
+   -group_id,topic_name,sentiment,text 
+
 ### What it does
 
 - Removes rows containing `Neutral` or `Irrelevant`
