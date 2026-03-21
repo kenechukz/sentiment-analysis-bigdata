@@ -9,3 +9,5 @@ __pycache__/
 output/
 target/
 Big Pharma - Report.html
+README.md
+render_report_html.ps1
