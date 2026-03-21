@@ -1,1 +1,10 @@
 datasets/*
+.python_packages/
+.m2/
+__pycache__/
+*.py[cod]
+*.log
+.idea/
+.vscode/
+output/
+target/
