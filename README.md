@@ -6,7 +6,9 @@ This repository now includes a Java Spark implementation that uses `JavaSparkCon
 
 - `data_preprocessing.py` cleans the source CSV and writes a filtered file to `datasets/`
 - `src/main/java/ie/ucd/bigdata/SentimentWordCount.java` runs the Java Spark word count by sentiment
+- `src/main/java/ie/ucd/bigdata/NonSparkSentimentWordCount.java` runs the same word count locally without Spark
 - `run_java_spark.ps1` selects a supported local JDK and runs the Spark job with Maven
+- `run_java_non_spark.ps1` runs the non-Spark Java implementation
   
 ### Prerequisites
 
@@ -55,6 +57,14 @@ powershell -ExecutionPolicy Bypass -File .\run_java_spark.ps1 -Dataset "datasets
 ## Output
 
 The Spark job writes a CSV-style text file into `output/` and prints a small preview to the console.
+
+## Run the non-Spark Java job
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\run_java_non_spark.ps1 -Dataset "datasets/twitter_training_1GB_cleaned.csv"
+```
+
+This uses standard Java file I/O and in-memory maps instead of Spark.
 
 ## Build directly with Maven
 
