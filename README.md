@@ -7,6 +7,13 @@ This repository now includes a Java Spark implementation that uses `JavaSparkCon
 - `data_preprocessing.py` cleans the source CSV and writes a filtered file to `datasets/`
 - `src/main/java/ie/ucd/bigdata/SentimentWordCount.java` runs the Java Spark word count by sentiment
 - `run_java_spark.ps1` selects a supported local JDK and runs the Spark job with Maven
+  
+### Prerequisites
+
+1. CSV must have these columns in this exact order:
+   - `group_id,topic_name,sentiment,text`
+
+### What it does
 
 ## Java Spark setup
 
