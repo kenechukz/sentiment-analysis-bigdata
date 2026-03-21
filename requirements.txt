@@ -1,5 +1,0 @@
-# Keep NumPy below 1.29 to stay compatible with the SciPy/NLTK stack used here.
-numpy>=1.26,<1.29
-scipy>=1.11,<1.13
-nltk>=3.9,<4.0
-pyspark>=3.5,<4.0
