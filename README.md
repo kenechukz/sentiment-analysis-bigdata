@@ -76,6 +76,7 @@ After generating `output/twitter_training_1GB_cleaned_benchmark_word_counts.csv`
 ```powershell
 python3 .\word_sentiment_lookup.py
 ```
+
 Output:
 
 ```powershell
