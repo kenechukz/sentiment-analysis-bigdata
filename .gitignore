@@ -6,8 +6,8 @@ __pycache__/
 *.log
 .idea/
 .vscode/
-output/
 target/
 Big Pharma - Report.html
 README.md
 render_report_html.ps1
+src/main/java/ie/ucd/bigdata/ReportPdfGenerator.java

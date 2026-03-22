@@ -41,7 +41,8 @@ public final class SentimentWordCount {
         "this", "those", "through", "to", "too", "under", "until", "up", "ve", "very",
         "was", "wasn", "we", "were", "weren", "what", "when", "where", "which", "while",
         "who", "whom", "why", "will", "with", "won", "wouldn", "y", "you", "your",
-        "yours", "yourself", "yourselves"
+        "yours", "yourself", "yourselves",
+        "cannot", "else", "every", "everything", "must", "one", "say", "without"
     ));
     private static final String DEFAULT_DATASET = "datasets/twitter_training_1GB_cleaned.csv";
 
