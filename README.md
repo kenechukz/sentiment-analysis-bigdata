@@ -1,6 +1,10 @@
 # sentiment-analysis-bigdata
 
-This repository now includes a Java Spark implementation that uses `JavaSparkContext` and RDDs only. It does not use Spark SQL or DataFrames.
+This project analyses a large Twitter dataset containing tweets for different topics and groups, labelled with fields such as sentiment, group ID, and topic name. The main goal is to compute the words that occur most frequently in positive and negative tweets.
+
+The cleaned dataset was evaluated in two equivalent formats: `twitter_training_1GB_cleaned.csv` (`1,229,605,101` bytes, `13,074,651` lines including the header) and `twiiter_training_1GB_cleaned.txt` (`1,216,530,435` bytes, `13,074,650` lines). Each full run therefore processes roughly 1GB of text and more than 13 million sentiment-labelled records.
+
+This repository includes a Java Spark implementation that uses `JavaSparkContext` and RDDs only and a Traditonal data processing implementation. It does not use Spark SQL or DataFrames.
 
 ## Files
 
@@ -9,13 +13,12 @@ This repository now includes a Java Spark implementation that uses `JavaSparkCon
 - `src/main/java/ie/ucd/bigdata/NonSparkSentimentWordCount.java` runs the same word count locally without Spark
 - `run_java_spark.ps1` selects a supported local JDK and runs the Spark job with Maven
 - `run_java_non_spark.ps1` runs the non-Spark Java implementation
-  
-### Prerequisites
+- `word_sentiment_lookup.py` looks up how strongly a word is associated with positive vs negative tweets from the generated output file
+
+## Prerequisites
 
 1. CSV must have these columns in this exact order:
    - `group_id,topic_name,sentiment,text`
-
-### What it does
 
 ## Java Spark setup
 
@@ -65,6 +68,25 @@ powershell -ExecutionPolicy Bypass -File .\run_java_non_spark.ps1 -Dataset "data
 ```
 
 This uses standard Java file I/O and in-memory maps instead of Spark.
+
+## Look up a word
+
+After generating `output/twitter_training_1GB_cleaned_benchmark_word_counts.csv`, you can check how often a word is associated with positive or negative tweets:
+
+```powershell
+python3 .\word_sentiment_lookup.py
+```
+Output:
+
+```powershell
+
+Enter a word: best
+best
+Positive: 99.94% (350355 occurences)
+Negative: 0.06% (211 occurences)
+```
+
+The script prompts for a word, then prints the positive and negative percentage split for that word. If the word is not present in `output/twitter_training_1GB_cleaned_benchmark_word_counts.csv`, it prints `word not found`.
 
 ## Build directly with Maven
 
