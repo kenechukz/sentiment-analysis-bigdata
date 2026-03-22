@@ -9,5 +9,5 @@ __pycache__/
 target/
 Big Pharma - Report.html
 README.md
-render_report_html.ps1
+scripts/render_report_html.ps1
 src/main/java/ie/ucd/bigdata/ReportPdfGenerator.java
