@@ -27,7 +27,7 @@ Spark 3.5 should be run with JDK 17 to 23. The machine this was fixed on had Jav
 ## Run the preprocessing step
 
 ```powershell
-& 'C:\Users\kenep\AppData\Local\Programs\Python\Python312\python.exe' .\data_preprocessing.py
+python3 .\data_preprocessing.py
 ```
 
 The script prompts for:
